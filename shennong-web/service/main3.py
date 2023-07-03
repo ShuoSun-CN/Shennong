@@ -52,7 +52,7 @@ async def config():
 
 def generate_prompt(instruction, input=None):
 		if input:
-				return f"""The following is a conversation between an AI assistant called Assistant and a human user called User.
+				return f"""The following is a conversation between an Pharmacologist called Shennong and a human user called User.
 
 ### Instruction:
 {instruction}
@@ -62,7 +62,7 @@ def generate_prompt(instruction, input=None):
 
 ### Response:"""
 		else:
-				return f"""The following is a conversation between an AI assistant called Assistant and a human user called User.
+				return f"""The following is a conversation between an Pharmacologist called Shennong and a human user called User.
 
 ### Instruction:
 {instruction}
