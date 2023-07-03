@@ -21,7 +21,7 @@
 [//]: # (  - **Checkpoint-final**&#40;Facico/Chinese-Vicuna-lora-7b-3epoch-belle-and-guanaco&#41; and it is used for multiple rounds of dialogue)
 - [How to use](https://github.com/ShuoSun-CN/Shennong#how-to-use)
   - Installing、Multi-gpu training、Single-gpu training、Inference and use gradio to generate a web page(Streaming mode+beam search)、 multi-round interaction and use gradio to generate a web page(Streaming mode+beam search)、Streaming mode base on alpaca-lora-serve
-- [try on colab](https://github.com/Facico/Chinese-Vicuna#try-on-colab)
+- [try on colab](https://github.com/ShuoSun-CN/Shennong#try-on-colab)
 ## Overview
 
 -  LLaMA paper: https://arxiv.org/abs/2302.13971v1
@@ -47,35 +47,7 @@ This figure show the performance of Shennong and other large language models on 
 
 ![img_1.png](./docs/performance.png)
 
-[//]: # (**Checkpoint-8000**&#40;about 1.5 epoch on belle+guanaco&#41;)
 
-[//]: # ()
-[//]: # (| Human                                                        | Chinese-Vicuna                                               | Note                    |)
-
-[//]: # (| ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------- |)
-
-[//]: # (| 写一篇英文散文诗，主题是春雨，想象自己是春雨，和英国古代诗人莎士比亚交流 | A: Spring rain falls softly on my face,<br/>A cool breeze blows through my hair,<br/>The sun shines brightly in the sky,<br/>And I feel as if I am flying high.<br/><br/>The birds chirp happily in the trees,<br/>The flowers bloom and their scent fills the air,<br/>The bees buzz gently from flower to flower,<br/>And the world seems to come alive once more.<br/><br/>I can hear the rush of the river,<br/>The sound of the waterfalls,<br/>The splash of the raindrops on the rocks,<br/>And the gentle murmur of the stream.<br/><br/>My heart is filled with joy and peace,<br/>As I take in the beauty around me,<br/>The warmth of the sun on my skin,<br/>And the freshness of the spring air. | Repetition Penalty=2.2  |)
-
-[//]: # (| 写一篇英文散文诗，主题是春雨，想象自己是春雨，和英国古代诗人莎士比亚交流 | 春雨滴滴滚滚，<br/>滚滚滚滚滚滚。<br/>滚滚滚滚滚滚，<br/>滚滚滚滚滚滚。<br/><br/>春雨滚滚滚，<br/>滚滚滚滚滚滚。<br/>滚滚滚滚滚滚，<br/>滚滚滚滚滚滚。<br/><br/>春雨滚滚滚，<br/>滚滚滚滚滚滚。<br/>滚滚滚滚滚滚，<br/>滚滚滚滚滚滚。<br/><br/>春雨滚滚滚，<br/>滚滚滚 | Repetition Penalty=1.0  |)
-
-[//]: # (| Spring rain falls softly on my face,<br/>A cool breeze blows through my hair,<br/>The sun shines brightly in the sky,<br/>And I feel as if I am flying high.<br/><br/>The birds chirp happily in the trees,<br/>The flowers bloom and their scent fills the air,<br/>The bees buzz gently from flower to flower,<br/>And the world seems to come alive once more.<br/><br/>I can hear the rush of the river,<br/>The sound of the waterfalls,<br/>The splash of the raindrops on the rocks,<br/>And the gentle murmur of the stream.<br/><br/>My heart is filled with joy and peace,<br/>As I take in the beauty around me,<br/>The warmth of the sun on my skin,<br/>And the freshness of the spring air.<br/>把上面的散文诗翻译成中文 | 春雨轻轻洒落在我的脸上，<br/>轻轻的风轻轻吹过我的头发，<br/>阳光明媚地照耀在天空，<br/>我感觉自己在飞高。<br/><br/>鸟儿在树枝上唱歌，<br/>花朵开放，它们的香气充满了空气，<br/>蜜蜂在花朵间飞舞，<br/>它们的鸣声充满了温暖。<br/><br/>我听到河流的声音，<br/>水瀑在岩石上轻轻滴滴，<br/>雨水在石头上轻轻滴滴，<br/>它们的声音充满了宁静。<br/><br/>我的心充满了喜悦和平，<br/>我感受到热浪的阳光，<br/>温暖的空气洒在我的脸上，<br/>我感受到春季的美 | beams=2，max tokens=350 |)
-
-[//]: # (| Classify the sentiment of the following sentence into Positive, Neutral, or Negative:<br/>Super excited about teaching Stanford’s first course on Large Language Models! Check the syllabus out here | Positive                                                     |                         |)
-
-[//]: # (| 今天天气怎么样，把这句话翻译成英语                           | What's the weather like today?                               |                         |)
-
-[//]: # (| 今天天气怎么样，把这句话翻译成日语                           | 今天の天気は何ですか？                                       |                         |)
-
-[//]: # (| 明天就假期结束了，有点抗拒上班，应该什么办？                 | 明天就假期结束了，有点抗拒上班，应该什么办？可以考虑一些有趣的活动，比如去看电影、阅读书籍、听音乐、去游泳池或者参加户外活动等。此外，也可以考虑一些家庭活动，比如做烹饪、做玩具、做手工艺品等。 |                         |)
-
-[//]: # (| Tell me five words that rhyme with 'shock'.                  | Five words that rhyme with'shock' are: <br/>1. Rock <br/>2. Lock <br/>3. Cock <br/>4. Hock <br/>5. Stock |                         |)
-
-[//]: # ()
-[//]: # (- We can find that you do not punish him a little, he will mess up, if the generation effect is not good, you can increase the Repetition Penalty, beams, topk.)
-
-[//]: # (- If your input is long, we suggest you can turn down the beams)
-
-[//]: # (- The checkpoint-8000 has some Japanese language skills, but not strong)
 ### Case
 These figures show cases that Shennong answer the question of molecule synthesising and molecule modifying.
 
@@ -164,47 +136,7 @@ pnpm dev
 - Please run these command in root directory of this project.
 
 
-[//]: # (**Single-gpu Training**)
 
-[//]: # ()
-[//]: # (```)
-
-[//]: # (python finetune.py --data_path merge.json --test_size 2000)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (- The test_size cannot be larger than the data size)
-
-[//]: # ()
-[//]: # (**inference and use gradio to generate a web page**)
-
-[//]: # ()
-[//]: # (```bash)
-
-[//]: # (bash generate.sh)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (- The parameters to note here are as follows)
-
-[//]: # ()
-[//]: # (  - BASE_MODEL，path of LLM)
-
-[//]: # (  - LORA_PATH，The checkpoint folder of the lora model)
-
-[//]: # (    - It should be noted here that the config loaded by the lora model must be "adapter_config.json" and the model name must be "adapter_model.bin", but it will be automatically saved as "pytorch_model.bin" during training. pytorch_model.bin" during training, while "adapter_config.json" and "adapter_model.bin" will be saved after all training is finished)
-
-[//]: # (      - If you load the lora model in the training checkpoint, the code will automatically copy the local "config-sample/adapter_config.json" to the corresponding directory for you and rename the "pytorch_model.bin" to "adapter_model.bin". and rename "pytorch_model.bin" to "adapter_model.bin".)
-
-[//]: # (    - It can also be any lora model on the huggingface corresponding to llama 7B, e.g.: `Facico/Chinese-Vicuna-lora-7b-3epoch-belle-and-guanaco`)
-
-[//]: # (  - USE_LOCAL, which checks the local model configuration when set to 1)
-
-[//]: # (- When using, "max_tokens" is set according to your computer's video memory, and if the generated content generates a lot of duplicate information, you can turn up the "Repetition Penalty".)
-
-[//]: # ()
 
 **Finetune Based on Shennong**
 
